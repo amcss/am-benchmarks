@@ -4,6 +4,8 @@ var express = require('express'),
   port = process.env.PORT || 5001,
   app = express();
 
+console.log('Gonna start on ' + port);
+
 app.disable("x-powered-by");
 app.use(compression());
 app.set('views', __dirname);
