@@ -6,8 +6,11 @@ var express = require('express'),
 
 app.disable("x-powered-by");
 app.use(compression());
+app.set('views', __dirname);
+app.set('view engine', 'jade');
+
 app.route('/').get(function (req, res) {
-  res.send("HOKAY");
+  res.render('index');
 });
 
 app.route(/^\/am-is-rad\/(.*)$/).get(function (req, res) {
