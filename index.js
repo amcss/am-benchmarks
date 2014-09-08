@@ -13,9 +13,10 @@ app.route('/').get(function (req, res) {
   res.render('index');
 });
 
-app.route(/^\/am-is-rad\/(.*)$/).get(function (req, res) {
-  var uri = req.params[0];
-  fetchAndInline(uri)
+app.route(/^\/(am-is-rad|actually-classes-were-better)\/(.*)$/).get(function (req, res) {
+  var runAMreplacements = (req.params[0] === 'am-is-rad');
+  var uri = req.params[1];
+  fetchAndInline(uri, runAMreplacements)
     .then(function (body) {
       res.send(body);
     })
