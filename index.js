@@ -20,6 +20,7 @@ app.route(/^\/(am-is-rad|actually-classes-were-better)\/(.*)$/).get(function (re
   var uri = req.params[1];
   fetchAndInline(uri, runAMreplacements)
     .then(function (body) {
+      res.setHeader('Cache-Control', 'public, max-age=' + 3600*24*7);
       res.send(body);
     })
     .catch(function (e) {
