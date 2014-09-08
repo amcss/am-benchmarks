@@ -9,6 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "~4.8.8"
+    "express": "~4.8.8",
+    "compression": "~1.1.0",
+    "request-promise": "~0.1.2",
+    "cheerio": "~0.17.0",
+    "bluebird": "~2.3.2"
   }
 }
