@@ -13,7 +13,7 @@ app.route('/').get(function (req, res) {
   res.render('index');
 });
 
-app.route(/^\/(am-is-rad|actually-classes-were-better)\/(.*)$/).get(function (req, res) {
+app.route(/^\/(classes|attributes|values)\/(.*)$/).get(function (req, res) {
   // Everything here is cached for a week
   res.setHeader('Cache-Control', 'public, max-age=' + 3600*24*7);
 
@@ -21,9 +21,9 @@ app.route(/^\/(am-is-rad|actually-classes-were-better)\/(.*)$/).get(function (re
   if (!(req.headers['accept'].match(/text\/html/))) return res.status(404).send();
 
   // Fetch the URL, process it and send it down
-  var runAMreplacements = (req.params[0] === 'am-is-rad');
+  var mode = req.params[0];
   var uri = req.params[1];
-  fetchAndInline(uri, runAMreplacements)
+  fetchAndInline(uri, mode)
     .then(function (body) {
       res.send(body);
     })
