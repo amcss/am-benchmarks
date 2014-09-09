@@ -27,7 +27,7 @@ Here's what I've tried to optimise for:
 
 This is a first attempt, so there may be other ways to achieve these goals. But this seems to be working pretty well:
 
-* Fetch an arbitrart HTML page
+* Fetch an arbitrary HTML page
 * Fetch all CSS included on that page
 * Rewrite the CSS & HTML to be AM-style (super naïvely)
 * Send it on down to the browser
@@ -36,16 +36,16 @@ This is a first attempt, so there may be other ways to achieve these goals. But 
 In practice, a couple of things make sense:
 
 * Inline the CSS into the HTML: makes the response from the server much simpler, and reduces variability based on network conditions.
-* Strip out `<script>` tags: again, for simplicity. This sorta excludes fully JS-rendered apps, but there are enough sites out there to get data from so ¯\_(ツ)_/¯
+* Strip out `<script>` tags: again, for simplicity. This sorta excludes fully JS-rendered apps, but there are enough sites out there to get data from so ¯\\\_(ツ)_/¯
 * Cache it all to hell: use a CDN so the tests are hitting cached versions of these pages from edge locations close to the test box - eliminates server processing time and reduces variability due to network performance.
 
-So that's what I've done. Read the source of this repo for how it all works.
+So that's what I've done. Read [the source](https://github.com/amcss/am-benchmarks/blob/master/index.js)to see how it all works.
 
 ## YAYAGOGOGO
 
 If you want to see it in action, look at these use cases:
 
-* Boostrap's landing page *
+#### Boostrap's landing page
 - http://am-benchmark.glenmaddern.com/classes/http://getbootstrap.com
 - http://am-benchmark.glenmaddern.com/attributes/http://getbootstrap.com
 - http://am-benchmark.glenmaddern.com/values/http://getbootstrap.com
@@ -74,12 +74,12 @@ The final option, `values`, uses the `~=` selector much more heavily. It replace
 
 Again, this markup is dumb as a plank, but will be enough to show how much *total reliance* on the `=~` selector changes your site's performance. Here are some other demo sites:
 
-* Facebook's landing page when you don't bother with a User-Agent *
+#### Facebook's landing page when you don't bother with a User-Agent
 - http://am-benchmark.glenmaddern.com/classes/http://facebook.com
 - http://am-benchmark.glenmaddern.com/attributes/http://facebook.com
 - http://am-benchmark.glenmaddern.com/values/http://facebook.com
 
-* New York Times homepage *
+#### New York Times homepage
 - http://am-benchmark.glenmaddern.com/classes/http://nytimes.com
 - http://am-benchmark.glenmaddern.com/attributes/http://nytimes.com
 - http://am-benchmark.glenmaddern.com/values/http://nytimes.com
