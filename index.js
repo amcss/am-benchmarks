@@ -7,7 +7,6 @@ var express = require('express'),
 console.log('Gonna start on ' + port);
 
 app.disable("x-powered-by");
-app.disable('etag');
 app.use(compression());
 app.set('views', __dirname);
 app.set('view engine', 'jade');
