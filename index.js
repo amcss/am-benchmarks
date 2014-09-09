@@ -1,3 +1,5 @@
+"use strict";
+
 var express = require('express'),
   compression = require('compression'),
   fetchAndInline = require('./lib/fetch_and_inline'),
