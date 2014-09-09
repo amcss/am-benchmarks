@@ -15,7 +15,7 @@ app.route('/').get(function (req, res) {
   res.render('index');
 });
 
-app.route(/^\/(classes|attributes|values)\/(.*)$/).get(function (req, res) {
+app.route(/^\/(baseline|classes|attributes|values)\/(.*)$/).get(function (req, res) {
   // Everything here is cached for a week
   res.setHeader('Cache-Control', 'public, max-age=' + 3600*24*7);
 
