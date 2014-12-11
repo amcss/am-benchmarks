@@ -72,7 +72,7 @@ The final option, `values`, uses the `~=` selector much more heavily. It replace
 + [am-klass~='btn'] { /* styles */ }
 ```
 
-Again, this markup is dumb as a plank, but will be enough to show how much *total reliance* on the `=~` selector changes your site's performance. Here are some other demo sites:
+Again, this markup is dumb as a plank, but will be enough to show how much *total reliance* on the `~=` selector changes your site's performance. Here are some other demo sites:
 
 #### Facebook's landing page when you don't bother with a User-Agent
 - http://am-benchmark.glenmaddern.com/classes/http://facebook.com
